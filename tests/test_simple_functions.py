@@ -1,5 +1,5 @@
 import pytest
-
+import math
 from simple_functions import my_sum, factorial, sinf
 
 
@@ -15,12 +15,21 @@ class TestSimpleFunctions(object):
         isum = my_sum(iterable)
         assert isum == expected
 
-    def test_factorial(self, number, expected):
+    @pytest.mark.parametrize('num, expected', [
+        (5, 120),      # factorial(5) = 120
+        (3, 6),        # factorial(3) = 6
+        (0, 1),        # factorial(0) = 1
+    ])
+    def test_factorial(self, num, expected):
         '''Test our factorial function'''
-        answer = factorial(number)
+        answer = factorial(num)
         assert answer == expected
 
-    def test_sinf(self, x, expected):
+    @pytest.mark.parametrize('angle, expected', [
+        (0, 0),
+        (math.pi / 2, 1),
+        (3 * math.pi / 2, -1)])
+    def test_sinf(self, angle, expected):
         '''Test our sin function'''
-        answer = sinf(x)
+        answer = sinf(angle)
         assert answer == expected

@@ -1,6 +1,6 @@
 from functools import cache
 import numpy as np
-__all__ = ['my_sum', 'factorial', 'sin']
+__all__ = ['my_sum', 'factorial', 'sinf']
 
 
 def my_sum(iterable):
@@ -10,7 +10,7 @@ def my_sum(iterable):
     return tot
 
 
-def sin(x):
+def sinf(x):
     return np.sin(x)
 
 

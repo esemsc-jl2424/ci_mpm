@@ -1,6 +1,6 @@
 import pytest
 
-from simple_functions import my_sum, factorial, sin
+from simple_functions import my_sum, factorial, sinf
 
 
 class TestSimpleFunctions(object):
@@ -20,7 +20,7 @@ class TestSimpleFunctions(object):
         answer = factorial(number)
         assert answer == expected
 
-    def test_sin(self, x, expected):
+    def test_sinf(self, x, expected):
         '''Test our sin function'''
-        answer = sin(x)
+        answer = sinf(x)
         assert answer == expected

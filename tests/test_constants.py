@@ -1,6 +1,6 @@
 import numpy as np
 
-from constants import pi
+from simple_functions.constants import pi
 
 
 class TestPi(object):
